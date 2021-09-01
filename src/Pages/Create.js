@@ -7,13 +7,13 @@ function Create() {
   function Create() {
     let data = { name, price, image };
 
-    fetch('https://apitesting78.000webhostapp.com/create.php', {
+    fetch('Api/File.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
         // 'Access-Control-Request-Method': 'POST'
       },
-      body: JSON.stringify({ name: name, price: price, image: image })
+      body: JSON.stringify({ data })
     }).then(result => {
       result.json().then(response => {
         console.log(response);

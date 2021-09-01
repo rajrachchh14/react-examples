@@ -3,11 +3,9 @@ import { useEffect, useState } from 'react';
 
 function List() {
   const [user, setsUser] = useState([]);
-
+  // https://apitesting78.000webhostapp.com/data.json
   useEffect(() => {
-    fetch(
-      'https://apitesting78.000webhostapp.com/Api/select_all_products.php'
-    ).then(data => {
+    fetch('Api/File.json').then(data => {
       data.json().then(result => {
         //   console.log(result.data);
         setsUser(result.data);
