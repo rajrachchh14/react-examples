@@ -27,6 +27,7 @@ function List() {
                 <tr>
                   <th>id</th>
                   <th>Name</th>
+                  <th>Price</th>
 
                   <th>Image</th>
                 </tr>
@@ -37,6 +38,7 @@ function List() {
                       <tr key={i}>
                         <td>{item.id}</td>
                         <td>{item.name}</td>
+                        <td>{item.price}</td>
                         <td>{item.image}</td>
                       </tr>
                     ))
