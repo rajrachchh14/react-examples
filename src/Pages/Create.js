@@ -6,18 +6,15 @@ function Create() {
 
   function Create() {
     let data = { name, price, image };
-    // console.warn(data);
 
-    fetch(
-      'https://apitesting78.000webhostapp.com/Api/select_all_products.php',
-      {
-        method: 'Post',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name: name, price: price, image: image })
-      }
-    ).then(result => {
+    fetch('https://apitesting78.000webhostapp.com/create.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Access-Control-Request-Method': 'POST'
+      },
+      body: JSON.stringify({ name: name, price: price, image: image })
+    }).then(result => {
       result.json().then(response => {
         console.log(response);
         console.log('insert');
