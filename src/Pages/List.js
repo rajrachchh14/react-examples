@@ -5,12 +5,15 @@ function List() {
   const [user, setsUser] = useState([]);
   // https://apitesting78.000webhostapp.com/data.json
   useEffect(() => {
-    fetch('Api/File.json').then(data => {
-      data.json().then(result => {
-        //   console.log(result.data);
-        setsUser(result.data);
-      });
-    });
+    // fetch('Api/File.json').then(data => {
+    fetch('https://json-server-azq8ss--3000.local.webcontainer.io/posts').then(
+      data => {
+        data.json().then(result => {
+          console.log(result.data);
+          setsUser(result.data);
+        });
+      }
+    );
   }, []);
 
   return (
