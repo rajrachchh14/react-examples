@@ -1,25 +1,57 @@
 import React, { useState } from 'react';
+
+// import request from 'superagent';
+// import axios from 'axios';
+
 function Create() {
   let [name, SetName] = useState('');
   let [price, SetPrice] = useState('');
   let [image, SetImage] = useState('');
+  let [id, s] = useState('10');
 
   function Create() {
     let data = { name, price, image };
+    console.log(data);
 
-    fetch('Api/File.json', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Access-Control-Request-Method': 'POST'
-      },
-      body: JSON.stringify({ data })
-    }).then(result => {
-      result.json().then(response => {
-        console.log(response);
-        console.log('insert');
-      });
-    });
+    // fetch('https://apitesting78.000webhostapp.com/data.json', {
+    //   credentials: 'include',
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(data)
+    // })
+    //   .then(result => console.log('success====:', result))
+    //   .catch(error => console.log('error============:', error));
+
+    // request
+    //   .post('https://apitesting78.000webhostapp.com/data.json')
+    //   // .set('Content-Type', 'application/x-www-form-urlencoded')
+    //   .set('Content-Type', 'application/json')
+    //   .send({ id, name: 'username', price: 'password', image: 'ss' })
+    //   .send({ data })
+    //   .end(function(err, res) {
+    //     console.log(res);
+    //   });
+
+    // axios
+    //   .post('https://apitesting78.000webhostapp.com/data.json', {
+    //     credentials: 'include',
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //       //   'Access-Control-Request-Method': 'POST'
+    //     },
+    //     body: JSON.stringify({
+    //       name: 'yourValue',
+    //       price: 'yourOtherValue',
+    //       image: 'yourOtherValue'
+    //     })
+    //   })
+    //   .then(result => {
+    //     result.json().then(response => {
+    //       console.log(response);
+    //       console.log('insert');
+    //     });
+    //   });
   }
 
   return (
