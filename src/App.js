@@ -35,6 +35,10 @@ export default function App() {
         <Route path="/create">
           <Create />
         </Route>
+
+        <Route path="/create">
+          <Update />
+        </Route>
       </Router>
     </>
   );

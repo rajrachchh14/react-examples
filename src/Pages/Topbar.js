@@ -1,6 +1,9 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap'; //  NavLink,
 import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Update from './Pages/Update';
 function Topbar() {
   return (
     // <>
@@ -39,6 +42,8 @@ function Topbar() {
           <Nav.Link as={Link} to="/create">
             Create
           </Nav.Link>
+
+          <Route path="/update/:id" render={props => <Update {...props} />} />
         </Nav>
       </Navbar>
     </>
