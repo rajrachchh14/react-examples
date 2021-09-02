@@ -7,34 +7,34 @@ function Update(props) {
 
   /* {console.log(props.match.params.id)} */
 
-  useEffect(() => {
-    //   console.log(id);
-    //   fetch(`Api/File.json/ + ${id}`).then(data => {
-    //     // headers : {
-    //     //   'Content-Type': 'application/json',
-    //     //   'Accept': 'application/json'
-    //     //  }
-    //     data.json().then(result => {
-    //       // console.log(result.data);
-    //       console.log(result);
-    //       // setsProduct(result.data);
-    //     });
-    //   });
+  // useEffect(() => {
+  //   console.log(id);
+  //   fetch(`Api/File.json/ + ${id}`).then(data => {
+  //     // headers : {
+  //     //   'Content-Type': 'application/json',
+  //     //   'Accept': 'application/json'
+  //     //  }
+  //     data.json().then(result => {
+  //       // console.log(result.data);
+  //       console.log(result);
+  //       // setsProduct(result.data);
+  //     });
+  //   });
 
-    fetch('./Api/File.json/' + id)
-      .then(response => {
-        console.log(response);
-        return response.json();
-      })
-      .then(data => {
-        // Work with JSON data here
-        console.log(data.data);
-      })
-      .catch(err => {
-        // Do something for an error here
-        console.log('Error Reading data ' + err);
-      });
-  }, []);
+  //   fetch('Api/File.json/' + id)
+  //     .then(response => {
+  //       console.log(response);
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       // Work with JSON data here
+  //       console.log(data.data);
+  //     })
+  //     .catch(err => {
+  //       // Do something for an error here
+  //       console.log('Error Reading data ' + err);
+  //     });
+  // }, []);
 
   function Update() {}
 
