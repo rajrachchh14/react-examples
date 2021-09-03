@@ -6,7 +6,7 @@ function Detail() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://json-server--3000.local.webcontainer.io/posts')
+    fetch('https://localhost:3000/posts')
       .then(res => res.json())
       .then(
         result => {
@@ -28,11 +28,11 @@ function Detail() {
   } else {
     return (
       <ul>
-        {items.map(item => (
+        {/* {items.map(item => (
           <li key={item.id}>
             {item.title} {item.author}
           </li>
-        ))}
+        ))} */}
       </ul>
     );
   }
