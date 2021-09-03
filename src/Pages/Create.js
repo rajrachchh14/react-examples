@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 
+import axios from 'axios';
+
 // import request from 'superagent';
 // import axios from 'axios';
 
 function Create() {
-  let [name, SetName] = useState('');
-  let [price, SetPrice] = useState('');
-  let [image, SetImage] = useState('');
+  let [title, SetName] = useState('');
+  // let [price, SetPrice] = useState('');
+  // let [image, SetImage] = useState('');
   let [id, s] = useState('10');
 
   function Create() {
-    let data = { name, price, image };
+    let data = { title }; // , price, image
     console.log(data);
 
-    // fetch('https://apitesting78.000webhostapp.com/data.json', {
+    // fetch('https://apitesting78.000webhostapp.com/api/Item');
+    // fetch('https://apitesting78.000webhostapp.com/api/Item', {
     //   credentials: 'include',
     //   method: 'POST',
     //   headers: { 'Content-Type': 'application/json' },
@@ -32,26 +35,27 @@ function Create() {
     //     console.log(res);
     //   });
 
-    // axios
-    //   .post('https://apitesting78.000webhostapp.com/data.json', {
-    //     credentials: 'include',
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //       //   'Access-Control-Request-Method': 'POST'
-    //     },
-    //     body: JSON.stringify({
-    //       name: 'yourValue',
-    //       price: 'yourOtherValue',
-    //       image: 'yourOtherValue'
-    //     })
-    //   })
-    //   .then(result => {
-    //     result.json().then(response => {
-    //       console.log(response);
-    //       console.log('insert');
-    //     });
-    //   });
+    axios
+      .post('https://apitesting78.000webhostapp.com/api/Item', {
+        credentials: 'include',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+          //   'Access-Control-Request-Method': 'POST'
+        },
+        body: JSON.stringify({
+          data
+          // title: title
+          // price: 'yourOtherValue',
+          // image: 'yourOtherValue'
+        })
+      })
+      .then(result => {
+        result.json().then(response => {
+          console.log(response);
+          console.log('insert');
+        });
+      });
   }
 
   return (
@@ -65,24 +69,24 @@ function Create() {
               className="form-control"
               placeholder="Name"
               onChange={e => SetName(e.target.value)}
-              value={name}
+              value={title}
             />
             <br />
-            <input
+            {/* <input
               type="text"
               className="form-control"
               placeholder="Price"
               onChange={e => SetPrice(e.target.value)}
               value={price}
-            />
+            /> */}
             <br />
-            <input
+            {/* <input
               type="text"
               className="form-control"
               placeholder="image"
               onChange={e => SetImage(e.target.value)}
               value={image}
-            />
+            /> */}
             <br />
             <input
               type="submit"
