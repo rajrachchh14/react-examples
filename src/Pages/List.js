@@ -1,19 +1,18 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function List() {
   const [user, setsUser] = useState([]);
   // https://apitesting78.000webhostapp.com/data.json
   useEffect(() => {
-    // fetch('Api/File.json').then(data => {
-    fetch('https://json-server-azq8ss--3000.local.webcontainer.io/posts').then(
-      data => {
-        data.json().then(result => {
-          console.log(result.data);
-          setsUser(result.data);
-        });
-      }
-    );
+    fetch('Api/File.json').then(data => {
+      // fetch('https://json-server-azq8ss--3000.local.webcontainer.io/posts').then(
+      // data => {
+      data.json().then(result => {
+        console.log(result.data);
+        setsUser(result.data);
+      });
+    });
   }, []);
 
   return (
@@ -29,8 +28,8 @@ function List() {
                   <th>id</th>
                   <th>Name</th>
                   <th>Price</th>
-
                   <th>Image</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,6 +40,9 @@ function List() {
                         <td>{item.name}</td>
                         <td>{item.price}</td>
                         <td>{item.image}</td>
+                        <td>
+                          <Link to={'/update/' + item.id}>Edit</Link>
+                        </td>
                       </tr>
                     ))
                   : 'else'}

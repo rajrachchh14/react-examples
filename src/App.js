@@ -36,10 +36,10 @@ export default function App() {
         <Route path="/create">
           <Create />
         </Route>
-
-        <Route path="/update">
+        <Route path="/update/:id" render={props => <Update {...props} />} />
+        {/* <Route path="/update">
           <Update />
-        </Route>
+        </Route> */}
       </Router>
     </>
   );

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-function Update() {
-  // props
+function Update(props) {
+  //
   // let id = props.match.params.id;
   let [name, SetName] = useState('');
   let [price, SetPrice] = useState('');
   let [image, SetImage] = useState('');
 
-  /* {console.log(props.match.params.id)} */
+  {
+    console.log(props.match.params.id);
+  }
 
   // useEffect(() => {
   //   console.log(id);
@@ -41,7 +43,7 @@ function Update() {
 
   return (
     <>
-    {/* {id} */}
+      {/* {id} */}
       <div className="container">
         <div className="row">
           <div className="col-12 ">
