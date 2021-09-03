@@ -1,30 +1,29 @@
 import React from 'react';
-import { useEffect } from 'react'; // , useState
-// import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react'; // , useState
+import { Link } from 'react-router-dom';
 function List() {
   // const [user, setsUser] = useState([]);
 
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
   useEffect(() => {
-    // fetch('https://json-server-azq8ss--8080.local.webcontainer.io/')
-    //   .then(res => res.json())
-    //   .then(
-    //     result => {
-    //       console.log(result);
-    //     },
+    fetch('https://apitesting78.000webhostapp.com/api/Item')
+      .then(res => res.json())
+      .then(
+        result => {
+          console.log(result);
+          setIsLoaded(true);
+          setItems(result);
+        },
 
-    //     error => {
-    //       console.log(error);
-    //     }
-    //   );
-
-    fetch('https://json-server--3000.local.webcontainer.io/posts', {
-      credentials: 'include',
-      // method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-      .then(result => console.log('success====:', result))
-      .catch(error => console.log('error============:', error));
+        error => {
+          setIsLoaded(true);
+          setError(error);
+          console.log(error);
+        }
+      );
   }, []);
   return (
     <>
@@ -38,26 +37,24 @@ function List() {
                 <tr>
                   <th>id</th>
                   <th>Name</th>
-                  <th>Price</th>
-                  <th>Image</th>
+
                   <th>Action</th>
                 </tr>
               </thead>
-              {/* <tbody>
-                {user
-                  ? user.map((item, i) => (
+              <tbody>
+                {items
+                  ? items.map((item, i) => (
                       <tr key={i}>
                         <td>{item.id}</td>
-                        <td>{item.name}</td>
-                        <td>{item.price}</td>
-                        <td>{item.image}</td>
+                        <td>{item.title}</td>
+
                         <td>
                           <Link to={'/update/' + item.id}>Edit</Link>
                         </td>
                       </tr>
                     ))
                   : 'else'}
-              </tbody> */}
+              </tbody>
             </table>
           </div>
         </div>
