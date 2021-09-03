@@ -13,7 +13,7 @@ function Topbar() {
 
         <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">
-            Home Page
+            Home
           </Nav.Link>
 
           <Nav.Link as={Link} to="/list">

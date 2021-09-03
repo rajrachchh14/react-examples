@@ -37,9 +37,6 @@ export default function App() {
           <Create />
         </Route>
         <Route path="/update/:id" render={props => <Update {...props} />} />
-        {/* <Route path="/update">
-          <Update />
-        </Route> */}
       </Router>
     </>
   );
@@ -47,3 +44,4 @@ export default function App() {
 // https://dp7z9.csb.app/
 // fetch("https://reqres.in/api/users?page=2").then(()=>{})
 // res.json().then(()=>{})
+// https://apitesting78.000webhostapp.com/data.json

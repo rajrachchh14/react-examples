@@ -2,17 +2,19 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 function List() {
-  const [user, setsUser] = useState([]);
-  // https://apitesting78.000webhostapp.com/data.json
+  // const [user, setsUser] = useState([]);
+
   useEffect(() => {
-    fetch('Api/File.json').then(data => {
-      // fetch('https://json-server-azq8ss--3000.local.webcontainer.io/posts').then(
-      // data => {
-      data.json().then(result => {
-        console.log(result.data);
-        setsUser(result.data);
-      });
-    });
+    // fetch('Api/File.json').then(data => {
+
+    fetch('https://json-server-azq8ss--3000.local.webcontainer.io/posts').then(
+      result => {
+        result.json().then(response => {
+          console.log(response);
+          // setsUser(response.data);
+        });
+      }
+    );
   }, []);
 
   return (
@@ -32,7 +34,7 @@ function List() {
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              {/* <tbody>
                 {user
                   ? user.map((item, i) => (
                       <tr key={i}>
@@ -46,7 +48,7 @@ function List() {
                       </tr>
                     ))
                   : 'else'}
-              </tbody>
+              </tbody> */}
             </table>
           </div>
         </div>
