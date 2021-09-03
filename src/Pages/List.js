@@ -1,22 +1,31 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react'; // , useState
+// import { Link } from 'react-router-dom';
 function List() {
   // const [user, setsUser] = useState([]);
 
   useEffect(() => {
-    // fetch('Api/File.json').then(data => {
+    // fetch('https://json-server-azq8ss--8080.local.webcontainer.io/')
+    //   .then(res => res.json())
+    //   .then(
+    //     result => {
+    //       console.log(result);
+    //     },
 
-    fetch('https://json-server-azq8ss--3000.local.webcontainer.io/posts').then(
-      result => {
-        result.json().then(response => {
-          console.log(response);
-          // setsUser(response.data);
-        });
-      }
-    );
+    //     error => {
+    //       console.log(error);
+    //     }
+    //   );
+
+    fetch('https://json-server--3000.local.webcontainer.io/posts', {
+      credentials: 'include',
+      // method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(result => console.log('success====:', result))
+      .catch(error => console.log('error============:', error));
   }, []);
-
   return (
     <>
       <h1>list</h1>
