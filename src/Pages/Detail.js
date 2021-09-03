@@ -6,10 +6,11 @@ function Detail() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://localhost:3000/posts')
+    fetch('https://apitesting78.000webhostapp.com/api/Item')
       .then(res => res.json())
       .then(
         result => {
+          console.log(result);
           setIsLoaded(true);
           setItems(result);
         },
@@ -17,6 +18,7 @@ function Detail() {
         error => {
           setIsLoaded(true);
           setError(error);
+          console.log(error);
         }
       );
   }, []);
