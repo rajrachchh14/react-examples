@@ -13,7 +13,7 @@ function List() {
       .then(res => res.json())
       .then(
         result => {
-          console.log(result);
+          // console.log(result);
           setIsLoaded(true);
           setItems(result);
         },
@@ -21,7 +21,7 @@ function List() {
         error => {
           setIsLoaded(true);
           setError(error);
-          console.log(error);
+          // console.log(error);
         }
       );
   }, []);
