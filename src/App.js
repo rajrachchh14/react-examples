@@ -9,6 +9,7 @@ import List from './Pages/List';
 import Search from './Pages/Search';
 import Create from './Pages/Create';
 import Topbar from './Pages/Topbar';
+import Update from './Pages/Update';
 
 export default function App() {
   return (
@@ -36,7 +37,7 @@ export default function App() {
           <Create />
         </Route>
 
-        <Route path="/create">
+        <Route path="/update">
           <Update />
         </Route>
       </Router>

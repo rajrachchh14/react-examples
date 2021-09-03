@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-function Update(props) {
-  let id = props.match.params.id;
+function Update() {
+  // props
+  // let id = props.match.params.id;
   let [name, SetName] = useState('');
   let [price, SetPrice] = useState('');
   let [image, SetImage] = useState('');
@@ -40,10 +41,11 @@ function Update(props) {
 
   return (
     <>
+    {/* {id} */}
       <div className="container">
         <div className="row">
           <div className="col-12 ">
-            <h1>Update {id}</h1>
+            <h1>Update </h1>
             <input
               type="text"
               className="form-control"

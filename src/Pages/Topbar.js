@@ -3,20 +3,9 @@ import { Navbar, Nav } from 'react-bootstrap'; //  NavLink,
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Update from './Pages/Update';
 function Topbar() {
   return (
-    // <>
     //   <Link to="/">Home Page</Link>
-
-    //   <Link to="/list">List</Link>
-
-    //   <Link to="/detail">Detail</Link>
-
-    //   <Link to="/search">Searchs</Link>
-
-    //   <Link to="/create">Create</Link>
-    // </>
 
     <>
       <Navbar bg="dark" variant="dark">
@@ -43,7 +32,11 @@ function Topbar() {
             Create
           </Nav.Link>
 
-          <Route path="/update/:id" render={props => <Update {...props} />} />
+          <Nav.Link as={Link} to="/update">
+            update
+          </Nav.Link>
+
+          {/* <Route path="/update/:id" render={props => <Update {...props} />} /> */}
         </Nav>
       </Navbar>
     </>
