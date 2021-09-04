@@ -7,12 +7,12 @@ import axios from 'axios';
 
 function Create() {
   let [title, SetName] = useState('');
-  // let [price, SetPrice] = useState('');
+  let [description, SetDescription] = useState('');
   // let [image, SetImage] = useState('');
   let [id, s] = useState('10');
 
   function Create() {
-    let data = { title }; // , price, image
+    let data = { title, description }; // , price, image
     console.log(data);
 
     // fetch('https://apitesting78.000webhostapp.com/api/Item');
@@ -36,16 +36,20 @@ function Create() {
     //   });
 
     axios
-      .post('https://apitesting78.000webhostapp.com/api/Item', {
+      .post('https://apitesting78.000webhostapp.com/api/Item/', {
         credentials: 'include',
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
-          //   'Access-Control-Request-Method': 'POST'
+          'Content-Type': 'application/json',
+          'Access-Control-Request-Method': 'POST',
+          'Access-Control-Allow-Origin': '*',
+          'Cache-Control':
+            'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
         },
         body: JSON.stringify({
-          data
-          // title: title
+          // data
+          title: 'ee',
+          description: 'pp'
           // price: 'yourOtherValue',
           // image: 'yourOtherValue'
         })
